@@ -43,7 +43,7 @@ class Shop:
         products_exist = self.get_products()    # прочитать файл
         flag = False if products_exist == '' else True  # флаг показывает, были строки в файле или нет
         try:
-            with open(self.__file_name, 'w', encoding='utf8') as file:
+            with open(self.__file_name, 'a', encoding='utf8') as file:
                 for product in products:
                     pr = f'{product.name}, {product.weight}, {product.category}\n'
                     if products_exist.find(product.name) >= 0:  # поиск по имени продукта
